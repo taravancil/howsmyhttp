@@ -34,6 +34,10 @@ All scripts live in `sh/`.
     ```bash
     go get github.com/jmhodges/justrun
     ```
+- [`minify`](https://github.com/tdewolff/minify/tree/master/cmd/minify)
+  ```
+  go get github.com/tdewolff/minify/cmd/minify
+  ```
 
 ## Typography
 

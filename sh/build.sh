@@ -1,1 +1,1 @@
-go build 
+go build && minify -o static/css/ src/css/

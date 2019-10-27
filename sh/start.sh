@@ -1,0 +1,1 @@
+justrun -c "sh sh/build.sh && ./howsmyhttp" -i howsmyhttp . src/

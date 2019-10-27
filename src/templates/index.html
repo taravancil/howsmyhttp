@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  {{ template "head" . }}
+  <body>
+    <link rel="stylesheet" href="/static/css/home.css" />
+
+    {{ template "header" }}
+    <main id="main">
+      <section class="hero">
+        <div class="container">
+          <h1>{{ .Title }}</h1>
+        </div>
+      </section>
+
+      <section id="what-is-this">
+        <div class="container">
+          <p>
+            Hows My HTTP? is a website that tells you which HTTP version your
+            client supports.
+          </p>
+
+          <p>
+            <a href="https://taravancil.com">Tara Vancil</a> built this in an
+            effort to practice <a href="https://golang.org">Go</a>. Inspired by
+            the eminently more useful
+            <a href="https://howsmyssl.com">howsmyssl.com</a>.
+          </p>
+        </div>
+        <a href="#todo" class="skip-link">Skip to Next Section</a>
+      </section>
+    </main>
+  </body>
+</html>

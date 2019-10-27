@@ -1,0 +1,30 @@
+{{ define "head" }}
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" width="device-width, initial-scale=1" />
+
+  <title>{{ .Title }}</title>
+  <meta property="og:title" content="{{ .Title }}" />
+  <meta name="twitter:title" content="{{ .Title }}" />
+
+  <meta
+    name="keywords"
+    content="http3,http2,http3 test,http3 api,http2 test,http2 api"
+  />
+
+  <meta name="description" content="{{ .Description }}" />
+  <meta property="og:description" content="{{ .Description }}" />
+  <meta name="twitter:description" content="{{ .Description }}" />
+
+  <meta property="og:image" content="" />
+  <meta name="twitter:image" content="" />
+
+  <meta property="og:url" content="https://howsmyhttp.com" />
+  <meta name="twitter:url" content="https://howsmyhttp.com" />
+
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@taravancil" />
+</head>
+{{ end }}

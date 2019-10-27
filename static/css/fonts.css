@@ -1,0 +1,13 @@
+@font-face {
+  font-family: Nunito;
+  font-weight: 500;
+  src: url("/static/fonts/Nunito-SemiBold-subset.woff2"),
+    url("/static/fonts/Nunito-SemiBold-subset.woff");
+}
+
+@font-face {
+  font-family: Nunito;
+  font-weight: 700;
+  src: url("/static/fonts/Nunito-Bold-subset.woff2"),
+    url("/static/fonts/Nunito-Bold-subset.woff");
+}

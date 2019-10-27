@@ -37,7 +37,7 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	path := strings.Trim(r.URL.Path, "/")
-	title := strings.Title(path) + " - " + appTitle
+	title := strings.Title(path) + " " + appTitle
 	if len(path) == 0 {
 		path = "index"
 		title = appTitle

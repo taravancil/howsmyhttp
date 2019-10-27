@@ -7,7 +7,7 @@ import (
 	"text/template"
 )
 
-const appTitle = "How's My HTTP"
+const appTitle = "How's My HTTP?"
 const appDescription = "Find out if your HTTP is good"
 const routes = "/ /about"
 

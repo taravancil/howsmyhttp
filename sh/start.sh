@@ -1,1 +1,1 @@
-justrun -c "sh sh/build.sh && ./howsmyhttp" -i howsmyhttp . src/
+find . -type d | justrun -c "sh sh/build.sh && ./howsmyhttp" -i howsmyhttp . src/

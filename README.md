@@ -21,8 +21,12 @@ All scripts live in `sh/`.
       <td>Starts the server, watches <code>src/</code> and recompiles when the templates change</td>
     </tr>
     <tr>
-      <td><strong><code>subset-fonts.sh</code></strong></td >
+      <td><strong><code>subset-fonts.sh</code></strong></td>
       <td>Generates subset font files from <code>src/fonts/</code> and outputs them to <code>static/fonts/</code></td>
+    </tr>
+    <tr>
+      <td><strong><code>gen-certs.sh</code></strong></td>
+      <td>Generates locally-trusted development certificates</td>
     </tr>
 </table>
 
@@ -34,6 +38,8 @@ All scripts live in `sh/`.
     ```bash
     go get github.com/jmhodges/justrun
     ```
+- [`mkcert`](https://github.com/FiloSottile/mkcert)
+  - [Installation instructions](https://github.com/FiloSottile/mkcert#installation)
 - [`minify`](https://github.com/tdewolff/minify/tree/master/cmd/minify)
   ```
   go get github.com/tdewolff/minify/cmd/minify

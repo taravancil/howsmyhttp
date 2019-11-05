@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"log"
 	"net/http"
 	"strings"
@@ -10,6 +11,11 @@ import (
 const appTitle = "How's My HTTP?"
 const appDescription = "Find out if your HTTP is good"
 const routes = "/ /about"
+
+var (
+	httpsAddr = flag.String("httpsAddr", "localhost:4043", "HTTPS address to listen on")
+	httpAddr  = flag.String("httpAddr", "", "Plain HTTP address to listen on")
+)
 
 type page struct {
 	Title       string
@@ -47,12 +53,16 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func main() {
+	flag.Parse()
 	app := http.NewServeMux()
 	app.Handle("/static/", makeStaticHandler())
 	app.HandleFunc("/", pageHandler)
 
-	err := http.ListenAndServe(":4000", app)
-	if err != nil {
-		log.Fatal(err)
+	if *httpAddr != "" {
+		log.Printf("Listening on http://%v", *httpAddr)
+		log.Fatal(http.ListenAndServe(*httpAddr, app))
 	}
+
+	log.Printf("Listening on https://%v", *httpsAddr)
+	log.Fatal(http.ListenAndServeTLS(*httpsAddr, "development.crt", "development.key", app))
 }

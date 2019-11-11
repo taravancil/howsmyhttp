@@ -1,3 +1,49 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  --baby-blue: #f4f8fc;
+  --darker-baby-blue: #d7e1ea;
+  --dark-blue: #2d2747;
+  --blue: #3191e7;
+  --red: #ed1c24;
+  --green: #aae75d;
+  --yellow: #ffdf31;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+nav {
+  background: var(--darker-baby-blue);
+  color: var(--dark-blue);
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 0 15px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.accent-font {
+  font-weight: 500;
+  font-family: Nunito;
+  letter-spacing: 0.03em;
+}
+h1 {
+  font-weight: 700;
+}
+
 nav .container {
   display: flex;
   justify-content: space-between;

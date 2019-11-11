@@ -14,8 +14,9 @@ const appDescription = "Find out if your HTTP is good"
 const routes = "/ /about"
 
 var (
-	httpsAddr = flag.String("httpsAddr", "localhost:4043", "HTTPS address to listen on")
-	httpAddr  = flag.String("httpAddr", "", "Plain HTTP address to listen on")
+	assetsToPush = [2]string{"/static/css/shared.css", "/static/css/fonts.css"}
+	httpsAddr    = flag.String("httpsAddr", "localhost:4043", "HTTPS address to listen on")
+	httpAddr     = flag.String("httpAddr", "", "Plain HTTP address to listen on")
 )
 
 type page struct {
@@ -43,6 +44,15 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("404")) // TODO 404 template
 		return
 	}
+
+	if pusher, ok := w.(http.Pusher); ok {
+		for _, path := range assetsToPush {
+			if err := pusher.Push(path, nil); err != nil {
+				log.Printf("Failed to push %v", path)
+			}
+		}
+	}
+
 	path := strings.Trim(r.URL.Path, "/")
 	title := strings.Title(path) + " " + appTitle
 	if len(path) == 0 {

@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"flag"
 	"log"
 	"net/http"
@@ -52,10 +53,19 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 	renderTemplate(w, path, &p)
 }
 
+func apiHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
+	ci := getClientInfo()
+	json, _ := json.Marshal(ci)
+	w.Write(json)
+	return
+}
+
 func main() {
 	flag.Parse()
 	app := http.NewServeMux()
 	app.Handle("/static/", makeStaticHandler())
+	app.HandleFunc("/api", apiHandler)
 	app.HandleFunc("/", pageHandler)
 
 	if *httpAddr != "" {

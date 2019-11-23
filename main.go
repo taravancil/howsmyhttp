@@ -65,7 +65,7 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 
 func apiHandler(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	ci := getClientInfo()
+	ci := getClientInfo(w)
 	json, _ := json.Marshal(ci)
 	w.Write(json)
 	return

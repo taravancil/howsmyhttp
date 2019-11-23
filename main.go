@@ -75,7 +75,7 @@ func main() {
 	flag.Parse()
 	app := http.NewServeMux()
 	app.Handle("/static/", makeStaticHandler())
-	app.HandleFunc("/api", apiHandler)
+	app.HandleFunc("/api/v1/", apiHandler)
 	app.HandleFunc("/", pageHandler)
 
 	if *httpAddr != "" {

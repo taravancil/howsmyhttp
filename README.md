@@ -4,6 +4,10 @@ This is the source for [howsmyhttp.com](https://howsmyhttp.com).
 
 How's My HTTP tells you which kind of HTTP your client supports. I built this in an effort to practice [Go](https://golang.org). Inspired by the eminently more useful [howsmyssl](https://github.com/jmhodges/howsmyssl).
 
+## API
+
+TODO document /v1/api
+
 ## Development
 
 HTML templates, CSS, and JavaScript live in `src/`. `sh/start.sh` watches `src/` for changes and recompiles the project when the templates change.

@@ -90,3 +90,19 @@ p {
 section {
   margin-bottom: 20px;
 }
+
+pre {
+  background: var(--baby-blue);
+  border: 1px solid var(--darker-baby-blue);
+  color: var(--dark-blue);
+  padding: 10px;
+}
+
+.code {
+  font-family: Menlo, Monaco, "Courier New", monospace;
+  font-size: 14px;
+}
+
+.error {
+  color: var(--red);
+}

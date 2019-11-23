@@ -1,0 +1,31 @@
+{{ define "api" }}
+<!DOCTYPE html>
+<html lang="en">
+  {{ template "head" . }}
+  <body>
+    {{ template "criticalCss" }} {{ template "header" }}
+    <main id="main">
+      <section class="hero">
+        <div class="container">
+          <h1>{{ .Title }}</h1>
+          <p>
+            Hows My HTTP? is a website that tells you which HTTP version your
+            client supports.
+          </p>
+        </div>
+        <a href="#usage" class="skip-link">Skip to Next Section</a>
+      </section>
+
+      <section id="usage">
+        <div class="container">
+          <h2>Usage</h2>
+          <pre id="api-response" class="code">Fetching client info...</pre>
+          <p id="error-response" class="code error"></p>
+        </div>
+      </section>
+    </main>
+
+    <script src="/static/js/api.js"></script>
+  </body>
+</html>
+{{ end }}

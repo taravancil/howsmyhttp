@@ -1,1 +1,0 @@
-self.addEventListener("install",function(event){event.waitUntil(caches.open("howsmyhttp-v1").then(function(cache){return cache.addAll(["/static/fonts/Nunito-SemiBold-subset.woff2","/static/fonts/Nunito-SemiBold-subset.woff","/static/fonts/Nunito-Bold-subset.woff","/static/images/rocket.png",]);}));});

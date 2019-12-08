@@ -39,7 +39,8 @@ func renderTemplate(w http.ResponseWriter, tmpl string, p *page) {
 }
 
 func pageHandler(w http.ResponseWriter, r *http.Request) {
-	if !strings.Contains(routes, r.URL.Path) {
+	path := strings.Trim(r.URL.Path, "/")
+	if !strings.Contains(routes, path) {
 		w.WriteHeader(http.StatusNotFound)
 		w.Write([]byte("404")) // TODO 404 template
 		return
@@ -53,7 +54,6 @@ func pageHandler(w http.ResponseWriter, r *http.Request) {
 		}
 	}
 
-	path := strings.Trim(r.URL.Path, "/")
 	title := strings.Title(path)
 	if len(path) == 0 {
 		path = "index"

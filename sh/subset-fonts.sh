@@ -2,4 +2,4 @@ glyphhanger http://localhost:4000 --spider --family='Nunito' --subset='src/fonts
 
 mv src/fonts/*-subset*.woff* static/fonts
 
-echo "\n→ Copy output unicode range to update the existing unicode range in src/fonts.css"
+printf "\n→ Copy output unicode range to update the existing unicode range in src/fonts.css"

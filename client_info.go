@@ -6,7 +6,7 @@ import (
 
 type clientInfo struct {
 	LatestHTTPVersionSupported string `json:"latest_http_version_supported"`
-	SupportsHTTP2ServerPush    bool   `json:supports_http2_server_push`
+	SupportsHTTP2ServerPush    bool   `json:"supports_http2_server_push"`
 }
 
 func getClientInfo(w http.ResponseWriter) *clientInfo {

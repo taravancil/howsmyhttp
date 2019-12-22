@@ -11,7 +11,7 @@ type clientInfo struct {
 
 func getClientInfo(w http.ResponseWriter) *clientInfo {
 	info := new(clientInfo)
-	info.LatestHTTPVersionSupported = "2.0"
+	info.LatestHTTPVersionSupported = "1.0"
 	info.SupportsHTTP2ServerPush = false
 
 	if _, ok := w.(http.Pusher); ok {

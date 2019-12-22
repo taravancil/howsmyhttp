@@ -139,3 +139,44 @@ pre {
 .error {
   color: var(--red);
 }
+
+.notice {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 3px;
+  border: 2px dashed rgba(0, 0, 0, 0.1);
+}
+
+.notice .notice-image {
+  width: 44px;
+}
+
+@media (min-width: 700px) {
+  .notice .notice-image {
+    width: 56pix;
+  }
+
+  .notice {
+    flex-wrap: nowrap;
+  }
+}
+
+.notice .notice-body,
+.notice .notice-title {
+  margin: 0;
+}
+
+.notice .notice-title {
+  line-height: 1.1;
+  margin: 0 15px;
+}
+
+.notice a {
+  color: inherit;
+}
+
+.notice--info {
+  background: var(--yellow);
+}

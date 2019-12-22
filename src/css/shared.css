@@ -64,6 +64,7 @@ h1 {
 
 nav .container {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   padding: 7px 15px;
   font-size: 1rem;

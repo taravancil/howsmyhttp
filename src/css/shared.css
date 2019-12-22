@@ -29,6 +29,11 @@ nav {
   margin: auto;
   padding: 0 15px;
 }
+
+.hidden {
+  display: none;
+}
+
 h1,
 h2,
 h3,
@@ -42,6 +47,19 @@ h6,
 }
 h1 {
   font-weight: 700;
+}
+
+@media (max-width: 650px) {
+  nav .main-links {
+    width: 100%;
+    margin-top: 10px;
+    padding-top: 5px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+
+  nav .container {
+    flex-wrap: wrap;
+  }
 }
 
 nav .container {
@@ -81,6 +99,21 @@ a.skip-link {
 
 a.skip-link:focus {
   left: 0;
+}
+
+button {
+  background: var(--dark-blue);
+  color: var(--baby-blue);
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  font-family: Nunito;
+  font-size: 13.5px;
+  cursor: pointer;
+}
+
+button:focus {
+  box-shadow: 0 0 1px 1px var(--blue);
 }
 
 p {

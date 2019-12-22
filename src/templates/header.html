@@ -8,13 +8,40 @@
         <img src="/static/images/rocket.png" alt="" width="16" />
       </a>
 
+      <button class="toggle-nav-btn">Menu</button>
 
-      <div>
+      <div class="main-links hidden">
         <a href="/about">About</a>
         <a href="/api">API</a>
         <a href="https://github.com/taravancil/howsmyhttp">Source Code</a>
       </div>
     </div>
   </nav>
+
+  <script>
+    var toggleNavButton = document.querySelector(".toggle-nav-btn");
+    var navLinks = document.querySelector("nav .main-links");
+    toggleNavButton.addEventListener("click", toggleNav);
+
+    function toggleNav() {
+      navLinks.classList.toggle("hidden");
+    }
+
+    function handleResize() {
+      if (window.innerWidth > 650) {
+        navLinks.classList.remove("hidden");
+        toggleNavButton.classList.add("hidden");
+      } else {
+        navLinks.classList.add("hidden");
+        toggleNavButton.classList.remove("hidden");
+      }
+    }
+
+    function init() {
+      window.addEventListener("resize", handleResize);
+      handleResize();
+    }
+    init();
+  </script>
 </header>
 {{ end }}
